@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    List<Word> gamewords = (List<Word>) ViewData["words"];
+}
+
+@section Scripts
+{
+    <script src="~/js/spellinggame.js"></script>
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<table class="tablewithborder" width='100%'>
+    <tr> 
+        <td> 
+            <img src=@gamewords[0].url id="imageclue"></img>
+            <br />
+            <div id="answer_form" answer="@gamewords[0].spelling">
+                @for (int i = 0; i < gamewords[0].spelling.Length; i++)
+                {   
+                    <input type="text" maxlength="1" class="answerinput" id=@(i+1) onkeyup="testfunction(this)" />
+                }
+            </div>
+            <br />
+            <button type="button" id="submit_answer_button">Submit</button>
+        <td>
+            <table>
+                <tr>
+                    <h1> Score </h1>
+                    <br />
+                    <h2> 3/5 </h2>
+                </tr>
+                <tr>
+                    @for (int i = 0; i < gamewords.Count; i++)
+                    {
+                        <tr><h4 word=@gamewords[i].spelling id="word@(i+1)"> Question @(i+1) </h4></tr>
+                    }
+                </tr>
+            </table>                                       
+        </td>
+    </tr>
+</table>
+
+
+

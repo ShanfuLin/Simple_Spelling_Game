@@ -1,0 +1,38 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.tablewithborder {
+    border: 1px solid black;
+}
+
+.answerinput {
+    width: 100px;
+    height: 60px;
+    font-size: 50px;
+}
+
+#container {
+    display: block;
+    text-align: center;
+}
+
+#imageclue{
+    width: 500px;
+    height: 300px;
+}
